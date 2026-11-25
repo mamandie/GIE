@@ -1,6 +1,1 @@
-{
-  "version": 4,
-  "routes": {},
-  "dynamicRoutes": {},
-  "notFoundRoutes": []
-}
+{"version":4,"routes":{"/domaines/agriculture":{},"/domaines/maritime":{},"/domaines/technologies":{},"/domaines/commerce":{}},"dynamicRoutes":{"/domaines/[slug]":{"dataRoute":null,"dataRouteRegex":null,"fallback":false,"fallbackRevalidate":false,"fallbackSourceRoute":"/domaines/[slug]","routeRegex":"^\\/domaines\\/([^/]+?)(?:\\/)?$","allowHeader":[]}},"notFoundRoutes":[]}

@@ -389,7 +389,6 @@ function Home() {
     const [scrolled, setScrolled] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])(false);
     const [active, setActive] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])("#accueil");
     const [expanded, setExpanded] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])(false);
-    const [selectedSector, setSelectedSector] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])(null);
     const [legal, setLegal] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])(null);
     const [paused, setPaused] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])(false);
     const [formStatus, setFormStatus] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])("");
@@ -456,10 +455,9 @@ function Home() {
         menuOpen
     ]);
     (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useEffect"])(()=>{
-        if (selectedSector || legal) modal.current?.showModal();
+        if (legal) modal.current?.showModal();
         else modal.current?.close();
     }, [
-        selectedSector,
         legal
     ]);
     const toggleTheme = ()=>{
@@ -504,7 +502,6 @@ function Home() {
             setFormStatus("L’envoi a échoué. Veuillez réessayer dans quelques instants.");
         }
     };
-    const currentSector = __TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$content$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["sectors"].find((s)=>s.id === selectedSector);
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Fragment"], {
         children: [
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
@@ -513,7 +510,7 @@ function Home() {
                 children: "Aller au contenu"
             }, void 0, false, {
                 fileName: "[project]/components/home.tsx",
-                lineNumber: 281,
+                lineNumber: 279,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("header", {
@@ -533,7 +530,7 @@ function Home() {
                                     height: "74"
                                 }, void 0, false, {
                                     fileName: "[project]/components/home.tsx",
-                                    lineNumber: 291,
+                                    lineNumber: 289,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -548,25 +545,25 @@ function Home() {
                                                     children: "."
                                                 }, void 0, false, {
                                                     fileName: "[project]/components/home.tsx",
-                                                    lineNumber: 295,
+                                                    lineNumber: 293,
                                                     columnNumber: 26
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/components/home.tsx",
-                                            lineNumber: 294,
+                                            lineNumber: 292,
                                             columnNumber: 15
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/components/home.tsx",
-                                    lineNumber: 292,
+                                    lineNumber: 290,
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/components/home.tsx",
-                            lineNumber: 286,
+                            lineNumber: 284,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("nav", {
@@ -578,12 +575,12 @@ function Home() {
                                     children: label
                                 }, href, false, {
                                     fileName: "[project]/components/home.tsx",
-                                    lineNumber: 301,
+                                    lineNumber: 299,
                                     columnNumber: 15
                                 }, this))
                         }, void 0, false, {
                             fileName: "[project]/components/home.tsx",
-                            lineNumber: 299,
+                            lineNumber: 297,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -598,18 +595,18 @@ function Home() {
                                         size: 19
                                     }, void 0, false, {
                                         fileName: "[project]/components/home.tsx",
-                                        lineNumber: 321,
+                                        lineNumber: 319,
                                         columnNumber: 35
                                     }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$moon$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__Moon$3e$__["Moon"], {
                                         size: 19
                                     }, void 0, false, {
                                         fileName: "[project]/components/home.tsx",
-                                        lineNumber: 321,
+                                        lineNumber: 319,
                                         columnNumber: 55
                                     }, this)
                                 }, void 0, false, {
                                     fileName: "[project]/components/home.tsx",
-                                    lineNumber: 311,
+                                    lineNumber: 309,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
@@ -621,13 +618,13 @@ function Home() {
                                             size: 16
                                         }, void 0, false, {
                                             fileName: "[project]/components/home.tsx",
-                                            lineNumber: 324,
+                                            lineNumber: 322,
                                             columnNumber: 30
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/components/home.tsx",
-                                    lineNumber: 323,
+                                    lineNumber: 321,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -639,33 +636,33 @@ function Home() {
                                     onClick: ()=>setMenuOpen(!menuOpen),
                                     children: menuOpen ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$x$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__X$3e$__["X"], {}, void 0, false, {
                                         fileName: "[project]/components/home.tsx",
-                                        lineNumber: 334,
+                                        lineNumber: 332,
                                         columnNumber: 27
                                     }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$menu$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__Menu$3e$__["Menu"], {}, void 0, false, {
                                         fileName: "[project]/components/home.tsx",
-                                        lineNumber: 334,
+                                        lineNumber: 332,
                                         columnNumber: 35
                                     }, this)
                                 }, void 0, false, {
                                     fileName: "[project]/components/home.tsx",
-                                    lineNumber: 326,
+                                    lineNumber: 324,
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/components/home.tsx",
-                            lineNumber: 310,
+                            lineNumber: 308,
                             columnNumber: 11
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/components/home.tsx",
-                    lineNumber: 285,
+                    lineNumber: 283,
                     columnNumber: 9
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/components/home.tsx",
-                lineNumber: 284,
+                lineNumber: 282,
                 columnNumber: 7
             }, this),
             menuOpen && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("nav", {
@@ -684,19 +681,19 @@ function Home() {
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/components/home.tsx",
-                                    lineNumber: 347,
+                                    lineNumber: 345,
                                     columnNumber: 15
                                 }, this),
                                 label,
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$arrow$2d$up$2d$right$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__ArrowUpRight$3e$__["ArrowUpRight"], {}, void 0, false, {
                                     fileName: "[project]/components/home.tsx",
-                                    lineNumber: 349,
+                                    lineNumber: 347,
                                     columnNumber: 15
                                 }, this)
                             ]
                         }, href, true, {
                             fileName: "[project]/components/home.tsx",
-                            lineNumber: 346,
+                            lineNumber: 344,
                             columnNumber: 13
                         }, this)),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
@@ -709,19 +706,19 @@ function Home() {
                                 size: 18
                             }, void 0, false, {
                                 fileName: "[project]/components/home.tsx",
-                                lineNumber: 357,
+                                lineNumber: 355,
                                 columnNumber: 28
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/components/home.tsx",
-                        lineNumber: 352,
+                        lineNumber: 350,
                         columnNumber: 11
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/components/home.tsx",
-                lineNumber: 340,
+                lineNumber: 338,
                 columnNumber: 9
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("main", {
@@ -751,17 +748,17 @@ function Home() {
                                         type: "video/mp4"
                                     }, void 0, false, {
                                         fileName: "[project]/components/home.tsx",
-                                        lineNumber: 376,
+                                        lineNumber: 374,
                                         columnNumber: 15
                                     }, this)
                                 }, void 0, false, {
                                     fileName: "[project]/components/home.tsx",
-                                    lineNumber: 364,
+                                    lineNumber: 362,
                                     columnNumber: 13
                                 }, this)
                             }, void 0, false, {
                                 fileName: "[project]/components/home.tsx",
-                                lineNumber: 363,
+                                lineNumber: 361,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -772,24 +769,24 @@ function Home() {
                                     size: 16
                                 }, void 0, false, {
                                     fileName: "[project]/components/home.tsx",
-                                    lineNumber: 384,
+                                    lineNumber: 382,
                                     columnNumber: 23
                                 }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$pause$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__Pause$3e$__["Pause"], {
                                     size: 16
                                 }, void 0, false, {
                                     fileName: "[project]/components/home.tsx",
-                                    lineNumber: 384,
+                                    lineNumber: 382,
                                     columnNumber: 44
                                 }, this)
                             }, void 0, false, {
                                 fileName: "[project]/components/home.tsx",
-                                lineNumber: 379,
+                                lineNumber: 377,
                                 columnNumber: 11
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/components/home.tsx",
-                        lineNumber: 362,
+                        lineNumber: 360,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
@@ -809,14 +806,14 @@ function Home() {
                                                         className: "gold-line"
                                                     }, void 0, false, {
                                                         fileName: "[project]/components/home.tsx",
-                                                        lineNumber: 392,
+                                                        lineNumber: 390,
                                                         columnNumber: 19
                                                     }, this),
                                                     " GIE OPPORTUNITÉ D’AFRIQUE"
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/components/home.tsx",
-                                                lineNumber: 391,
+                                                lineNumber: 389,
                                                 columnNumber: 17
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h1", {
@@ -847,23 +844,23 @@ function Home() {
                                                                 children: ch === " " ? "\u00A0" : ch
                                                             }, i, false, {
                                                                 fileName: "[project]/components/home.tsx",
-                                                                lineNumber: 399,
+                                                                lineNumber: 397,
                                                                 columnNumber: 27
                                                             }, this))
                                                     }, li, false, {
                                                         fileName: "[project]/components/home.tsx",
-                                                        lineNumber: 397,
+                                                        lineNumber: 395,
                                                         columnNumber: 23
                                                     }, this))
                                             }, void 0, false, {
                                                 fileName: "[project]/components/home.tsx",
-                                                lineNumber: 394,
+                                                lineNumber: 392,
                                                 columnNumber: 17
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/components/home.tsx",
-                                        lineNumber: 390,
+                                        lineNumber: 388,
                                         columnNumber: 15
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -873,7 +870,7 @@ function Home() {
                                                 children: "Des talents qui se rencontrent. Des idées qui prennent racine. Nous réunissons les énergies pour faire grandir les opportunités de l’Afrique."
                                             }, void 0, false, {
                                                 fileName: "[project]/components/home.tsx",
-                                                lineNumber: 418,
+                                                lineNumber: 416,
                                                 columnNumber: 17
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
@@ -885,35 +882,35 @@ function Home() {
                                                         size: 18
                                                     }, void 0, false, {
                                                         fileName: "[project]/components/home.tsx",
-                                                        lineNumber: 424,
+                                                        lineNumber: 422,
                                                         columnNumber: 43
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/components/home.tsx",
-                                                lineNumber: 423,
+                                                lineNumber: 421,
                                                 columnNumber: 17
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/components/home.tsx",
-                                        lineNumber: 417,
+                                        lineNumber: 415,
                                         columnNumber: 15
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/components/home.tsx",
-                                lineNumber: 389,
+                                lineNumber: 387,
                                 columnNumber: 13
                             }, this)
                         }, void 0, false, {
                             fileName: "[project]/components/home.tsx",
-                            lineNumber: 388,
+                            lineNumber: 386,
                             columnNumber: 11
                         }, this)
                     }, void 0, false, {
                         fileName: "[project]/components/home.tsx",
-                        lineNumber: 387,
+                        lineNumber: 385,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -941,20 +938,20 @@ function Home() {
                             ].map(([Icon, label])=>{
                                 const I = Icon;
                                 return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
-                                    href: "#domaines",
+                                    href: `/domaines/${__TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$content$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["sectors"].find((sector)=>sector.title === label)?.id}`,
                                     children: [
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(I, {
                                             size: 20
                                         }, void 0, false, {
                                             fileName: "[project]/components/home.tsx",
-                                            lineNumber: 441,
+                                            lineNumber: 439,
                                             columnNumber: 19
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                             children: label
                                         }, void 0, false, {
                                             fileName: "[project]/components/home.tsx",
-                                            lineNumber: 442,
+                                            lineNumber: 440,
                                             columnNumber: 19
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -962,24 +959,24 @@ function Home() {
                                             children: "✦"
                                         }, void 0, false, {
                                             fileName: "[project]/components/home.tsx",
-                                            lineNumber: 443,
+                                            lineNumber: 441,
                                             columnNumber: 19
                                         }, this)
                                     ]
                                 }, label, true, {
                                     fileName: "[project]/components/home.tsx",
-                                    lineNumber: 440,
+                                    lineNumber: 438,
                                     columnNumber: 17
                                 }, this);
                             })
                         }, void 0, false, {
                             fileName: "[project]/components/home.tsx",
-                            lineNumber: 431,
+                            lineNumber: 429,
                             columnNumber: 11
                         }, this)
                     }, void 0, false, {
                         fileName: "[project]/components/home.tsx",
-                        lineNumber: 430,
+                        lineNumber: 428,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
@@ -1002,12 +999,12 @@ function Home() {
                                                 loading: "lazy"
                                             }, void 0, false, {
                                                 fileName: "[project]/components/home.tsx",
-                                                lineNumber: 457,
+                                                lineNumber: 455,
                                                 columnNumber: 17
                                             }, this)
                                         }, void 0, false, {
                                             fileName: "[project]/components/home.tsx",
-                                            lineNumber: 456,
+                                            lineNumber: 454,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1018,7 +1015,7 @@ function Home() {
                                                     children: "✦"
                                                 }, void 0, false, {
                                                     fileName: "[project]/components/home.tsx",
-                                                    lineNumber: 466,
+                                                    lineNumber: 464,
                                                     columnNumber: 17
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -1026,33 +1023,33 @@ function Home() {
                                                         "Des compétences réunies.",
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("br", {}, void 0, false, {
                                                             fileName: "[project]/components/home.tsx",
-                                                            lineNumber: 469,
+                                                            lineNumber: 467,
                                                             columnNumber: 19
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("strong", {
                                                             children: "Des perspectives élargies."
                                                         }, void 0, false, {
                                                             fileName: "[project]/components/home.tsx",
-                                                            lineNumber: 470,
+                                                            lineNumber: 468,
                                                             columnNumber: 19
                                                         }, this)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/components/home.tsx",
-                                                    lineNumber: 467,
+                                                    lineNumber: 465,
                                                     columnNumber: 17
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$arrow$2d$up$2d$right$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__ArrowUpRight$3e$__["ArrowUpRight"], {
                                                     size: 26
                                                 }, void 0, false, {
                                                     fileName: "[project]/components/home.tsx",
-                                                    lineNumber: 472,
+                                                    lineNumber: 470,
                                                     columnNumber: 17
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/components/home.tsx",
-                                            lineNumber: 465,
+                                            lineNumber: 463,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -1060,13 +1057,13 @@ function Home() {
                                             children: "LA FORCE DU COLLECTIF"
                                         }, void 0, false, {
                                             fileName: "[project]/components/home.tsx",
-                                            lineNumber: 474,
+                                            lineNumber: 472,
                                             columnNumber: 15
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/components/home.tsx",
-                                    lineNumber: 455,
+                                    lineNumber: 453,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(Reveal, {
@@ -1079,14 +1076,14 @@ function Home() {
                                                     className: "gold-line"
                                                 }, void 0, false, {
                                                     fileName: "[project]/components/home.tsx",
-                                                    lineNumber: 478,
+                                                    lineNumber: 476,
                                                     columnNumber: 17
                                                 }, this),
                                                 "01 — LE GROUPEMENT"
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/components/home.tsx",
-                                            lineNumber: 477,
+                                            lineNumber: 475,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
@@ -1095,40 +1092,40 @@ function Home() {
                                                 "Unir les forces.",
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("br", {}, void 0, false, {
                                                     fileName: "[project]/components/home.tsx",
-                                                    lineNumber: 483,
+                                                    lineNumber: 481,
                                                     columnNumber: 17
                                                 }, this),
                                                 "Révéler les opportunités.",
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("br", {}, void 0, false, {
                                                     fileName: "[project]/components/home.tsx",
-                                                    lineNumber: 485,
+                                                    lineNumber: 483,
                                                     columnNumber: 17
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                                     children: "Construire l’avenir."
                                                 }, void 0, false, {
                                                     fileName: "[project]/components/home.tsx",
-                                                    lineNumber: 486,
+                                                    lineNumber: 484,
                                                     columnNumber: 17
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/components/home.tsx",
-                                            lineNumber: 481,
+                                            lineNumber: 479,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                             children: "Le GIE Opportunité d’Afrique est un groupement d’intérêt économique qui œuvre à favoriser la coopération, à stimuler les investissements et à encourager des initiatives innovantes."
                                         }, void 0, false, {
                                             fileName: "[project]/components/home.tsx",
-                                            lineNumber: 488,
+                                            lineNumber: 486,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                             children: "Notre ambition : contribuer à un développement économique et durable, en respectant les réalités, les cultures et les aspirations du continent."
                                         }, void 0, false, {
                                             fileName: "[project]/components/home.tsx",
-                                            lineNumber: 493,
+                                            lineNumber: 491,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1154,20 +1151,20 @@ function Home() {
                                                             size: 20
                                                         }, void 0, false, {
                                                             fileName: "[project]/components/home.tsx",
-                                                            lineNumber: 507,
+                                                            lineNumber: 505,
                                                             columnNumber: 23
                                                         }, this),
                                                         label
                                                     ]
                                                 }, label, true, {
                                                     fileName: "[project]/components/home.tsx",
-                                                    lineNumber: 506,
+                                                    lineNumber: 504,
                                                     columnNumber: 21
                                                 }, this);
                                             })
                                         }, void 0, false, {
                                             fileName: "[project]/components/home.tsx",
-                                            lineNumber: 498,
+                                            lineNumber: 496,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -1181,19 +1178,19 @@ function Home() {
                                                     size: 18
                                                 }, void 0, false, {
                                                     fileName: "[project]/components/home.tsx",
-                                                    lineNumber: 522,
+                                                    lineNumber: 520,
                                                     columnNumber: 29
                                                 }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$plus$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__Plus$3e$__["Plus"], {
                                                     size: 18
                                                 }, void 0, false, {
                                                     fileName: "[project]/components/home.tsx",
-                                                    lineNumber: 522,
+                                                    lineNumber: 520,
                                                     columnNumber: 51
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/components/home.tsx",
-                                            lineNumber: 513,
+                                            lineNumber: 511,
                                             columnNumber: 15
                                         }, this),
                                         expanded && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1204,7 +1201,7 @@ function Home() {
                                                     children: "Notre démarche s’appuie sur la coopération nationale et internationale, la mobilisation des compétences et l’encouragement de l’innovation. La participation des membres et la transparence sont au cœur de notre vision de la gouvernance."
                                                 }, void 0, false, {
                                                     fileName: "[project]/components/home.tsx",
-                                                    lineNumber: 526,
+                                                    lineNumber: 524,
                                                     columnNumber: 19
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
@@ -1216,36 +1213,36 @@ function Home() {
                                                             size: 16
                                                         }, void 0, false, {
                                                             fileName: "[project]/components/home.tsx",
-                                                            lineNumber: 534,
+                                                            lineNumber: 532,
                                                             columnNumber: 44
                                                         }, this)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/components/home.tsx",
-                                                    lineNumber: 533,
+                                                    lineNumber: 531,
                                                     columnNumber: 19
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/components/home.tsx",
-                                            lineNumber: 525,
+                                            lineNumber: 523,
                                             columnNumber: 17
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/components/home.tsx",
-                                    lineNumber: 476,
+                                    lineNumber: 474,
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/components/home.tsx",
-                            lineNumber: 454,
+                            lineNumber: 452,
                             columnNumber: 11
                         }, this)
                     }, void 0, false, {
                         fileName: "[project]/components/home.tsx",
-                        lineNumber: 449,
+                        lineNumber: 447,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
@@ -1267,14 +1264,14 @@ function Home() {
                                                             className: "gold-line"
                                                         }, void 0, false, {
                                                             fileName: "[project]/components/home.tsx",
-                                                            lineNumber: 550,
+                                                            lineNumber: 548,
                                                             columnNumber: 19
                                                         }, this),
                                                         "02 — NOS DOMAINES"
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/components/home.tsx",
-                                                    lineNumber: 549,
+                                                    lineNumber: 547,
                                                     columnNumber: 17
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
@@ -1283,39 +1280,39 @@ function Home() {
                                                         "Des secteurs essentiels.",
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("br", {}, void 0, false, {
                                                             fileName: "[project]/components/home.tsx",
-                                                            lineNumber: 555,
+                                                            lineNumber: 553,
                                                             columnNumber: 19
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                                             children: "Un potentiel immense."
                                                         }, void 0, false, {
                                                             fileName: "[project]/components/home.tsx",
-                                                            lineNumber: 556,
+                                                            lineNumber: 554,
                                                             columnNumber: 19
                                                         }, this)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/components/home.tsx",
-                                                    lineNumber: 553,
+                                                    lineNumber: 551,
                                                     columnNumber: 17
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/components/home.tsx",
-                                            lineNumber: 548,
+                                            lineNumber: 546,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                             children: "Quatre domaines stratégiques pour accompagner le développement économique africain."
                                         }, void 0, false, {
                                             fileName: "[project]/components/home.tsx",
-                                            lineNumber: 559,
+                                            lineNumber: 557,
                                             columnNumber: 15
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/components/home.tsx",
-                                    lineNumber: 547,
+                                    lineNumber: 545,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1331,14 +1328,14 @@ function Home() {
                                                     height: "700"
                                                 }, void 0, false, {
                                                     fileName: "[project]/components/home.tsx",
-                                                    lineNumber: 567,
+                                                    lineNumber: 565,
                                                     columnNumber: 19
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                                     className: "sector-overlay"
                                                 }, void 0, false, {
                                                     fileName: "[project]/components/home.tsx",
-                                                    lineNumber: 574,
+                                                    lineNumber: 572,
                                                     columnNumber: 19
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1351,24 +1348,24 @@ function Home() {
                                                             ]
                                                         }, void 0, true, {
                                                             fileName: "[project]/components/home.tsx",
-                                                            lineNumber: 576,
+                                                            lineNumber: 574,
                                                             columnNumber: 21
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                                             children: s.tag
                                                         }, void 0, false, {
                                                             fileName: "[project]/components/home.tsx",
-                                                            lineNumber: 577,
+                                                            lineNumber: 575,
                                                             columnNumber: 21
                                                         }, this)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/components/home.tsx",
-                                                    lineNumber: 575,
+                                                    lineNumber: 573,
                                                     columnNumber: 19
                                                 }, this),
-                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
-                                                    onClick: ()=>setSelectedSector(s.id),
+                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
+                                                    href: `/domaines/${s.id}`,
                                                     className: "sector-body",
                                                     "aria-label": `Découvrir le domaine ${s.title}`,
                                                     children: [
@@ -1378,20 +1375,20 @@ function Home() {
                                                                     children: s.title
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/components/home.tsx",
-                                                                    lineNumber: 585,
+                                                                    lineNumber: 583,
                                                                     columnNumber: 23
                                                                 }, this),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                                                     children: s.description
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/components/home.tsx",
-                                                                    lineNumber: 586,
+                                                                    lineNumber: 584,
                                                                     columnNumber: 23
                                                                 }, this)
                                                             ]
                                                         }, void 0, true, {
                                                             fileName: "[project]/components/home.tsx",
-                                                            lineNumber: 584,
+                                                            lineNumber: 582,
                                                             columnNumber: 21
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -1400,40 +1397,40 @@ function Home() {
                                                                 size: 23
                                                             }, void 0, false, {
                                                                 fileName: "[project]/components/home.tsx",
-                                                                lineNumber: 589,
+                                                                lineNumber: 587,
                                                                 columnNumber: 23
                                                             }, this)
                                                         }, void 0, false, {
                                                             fileName: "[project]/components/home.tsx",
-                                                            lineNumber: 588,
+                                                            lineNumber: 586,
                                                             columnNumber: 21
                                                         }, this)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/components/home.tsx",
-                                                    lineNumber: 579,
+                                                    lineNumber: 577,
                                                     columnNumber: 19
                                                 }, this)
                                             ]
                                         }, s.id, true, {
                                             fileName: "[project]/components/home.tsx",
-                                            lineNumber: 566,
+                                            lineNumber: 564,
                                             columnNumber: 17
                                         }, this))
                                 }, void 0, false, {
                                     fileName: "[project]/components/home.tsx",
-                                    lineNumber: 564,
+                                    lineNumber: 562,
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/components/home.tsx",
-                            lineNumber: 546,
+                            lineNumber: 544,
                             columnNumber: 11
                         }, this)
                     }, void 0, false, {
                         fileName: "[project]/components/home.tsx",
-                        lineNumber: 541,
+                        lineNumber: 539,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
@@ -1448,7 +1445,7 @@ function Home() {
                                     children: [
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(AfricaMap, {}, void 0, false, {
                                             fileName: "[project]/components/home.tsx",
-                                            lineNumber: 604,
+                                            lineNumber: 602,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1458,20 +1455,20 @@ function Home() {
                                                     className: "status-dot"
                                                 }, void 0, false, {
                                                     fileName: "[project]/components/home.tsx",
-                                                    lineNumber: 606,
+                                                    lineNumber: 604,
                                                     columnNumber: 17
                                                 }, this),
                                                 "UNE VISION COMMUNE, SANS FRONTIÈRES"
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/components/home.tsx",
-                                            lineNumber: 605,
+                                            lineNumber: 603,
                                             columnNumber: 15
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/components/home.tsx",
-                                    lineNumber: 603,
+                                    lineNumber: 601,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(Reveal, {
@@ -1483,14 +1480,14 @@ function Home() {
                                                     className: "gold-line"
                                                 }, void 0, false, {
                                                     fileName: "[project]/components/home.tsx",
-                                                    lineNumber: 612,
+                                                    lineNumber: 610,
                                                     columnNumber: 17
                                                 }, this),
                                                 "03 — NOTRE VISION"
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/components/home.tsx",
-                                            lineNumber: 611,
+                                            lineNumber: 609,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
@@ -1499,7 +1496,7 @@ function Home() {
                                                 "Une Afrique connectée,",
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("br", {}, void 0, false, {
                                                     fileName: "[project]/components/home.tsx",
-                                                    lineNumber: 617,
+                                                    lineNumber: 615,
                                                     columnNumber: 17
                                                 }, this),
                                                 "innovante et ",
@@ -1507,20 +1504,20 @@ function Home() {
                                                     children: "prospère."
                                                 }, void 0, false, {
                                                     fileName: "[project]/components/home.tsx",
-                                                    lineNumber: 618,
+                                                    lineNumber: 616,
                                                     columnNumber: 30
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/components/home.tsx",
-                                            lineNumber: 615,
+                                            lineNumber: 613,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                             children: "Nous croyons en une Afrique où la coopération, l’innovation et la mobilisation des ressources créent de nouvelles perspectives pour les générations présentes et futures."
                                         }, void 0, false, {
                                             fileName: "[project]/components/home.tsx",
-                                            lineNumber: 620,
+                                            lineNumber: 618,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1539,49 +1536,49 @@ function Home() {
                                                             ]
                                                         }, void 0, true, {
                                                             fileName: "[project]/components/home.tsx",
-                                                            lineNumber: 633,
+                                                            lineNumber: 631,
                                                             columnNumber: 21
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
                                                             children: s
                                                         }, void 0, false, {
                                                             fileName: "[project]/components/home.tsx",
-                                                            lineNumber: 634,
+                                                            lineNumber: 632,
                                                             columnNumber: 21
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$arrow$2d$up$2d$right$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__ArrowUpRight$3e$__["ArrowUpRight"], {
                                                             size: 17
                                                         }, void 0, false, {
                                                             fileName: "[project]/components/home.tsx",
-                                                            lineNumber: 635,
+                                                            lineNumber: 633,
                                                             columnNumber: 21
                                                         }, this)
                                                     ]
                                                 }, s, true, {
                                                     fileName: "[project]/components/home.tsx",
-                                                    lineNumber: 632,
+                                                    lineNumber: 630,
                                                     columnNumber: 19
                                                 }, this))
                                         }, void 0, false, {
                                             fileName: "[project]/components/home.tsx",
-                                            lineNumber: 625,
+                                            lineNumber: 623,
                                             columnNumber: 15
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/components/home.tsx",
-                                    lineNumber: 610,
+                                    lineNumber: 608,
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/components/home.tsx",
-                            lineNumber: 602,
+                            lineNumber: 600,
                             columnNumber: 11
                         }, this)
                     }, void 0, false, {
                         fileName: "[project]/components/home.tsx",
-                        lineNumber: 597,
+                        lineNumber: 595,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
@@ -1600,14 +1597,14 @@ function Home() {
                                                     className: "gold-line"
                                                 }, void 0, false, {
                                                     fileName: "[project]/components/home.tsx",
-                                                    lineNumber: 650,
+                                                    lineNumber: 648,
                                                     columnNumber: 17
                                                 }, this),
                                                 "04 — PARTENARIATS & COOPÉRATION"
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/components/home.tsx",
-                                            lineNumber: 649,
+                                            lineNumber: 647,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
@@ -1616,27 +1613,27 @@ function Home() {
                                                 "Grandir ensemble.",
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("br", {}, void 0, false, {
                                                     fileName: "[project]/components/home.tsx",
-                                                    lineNumber: 655,
+                                                    lineNumber: 653,
                                                     columnNumber: 17
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                                     children: "Réussir ensemble."
                                                 }, void 0, false, {
                                                     fileName: "[project]/components/home.tsx",
-                                                    lineNumber: 656,
+                                                    lineNumber: 654,
                                                     columnNumber: 17
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/components/home.tsx",
-                                            lineNumber: 653,
+                                            lineNumber: 651,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                             children: "Le développement économique repose sur la capacité à réunir les compétences, les ressources et les ambitions. Construisons des partenariats durables, fondés sur la confiance et une vision partagée."
                                         }, void 0, false, {
                                             fileName: "[project]/components/home.tsx",
-                                            lineNumber: 658,
+                                            lineNumber: 656,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1651,19 +1648,19 @@ function Home() {
                                                             size: 17
                                                         }, void 0, false, {
                                                             fileName: "[project]/components/home.tsx",
-                                                            lineNumber: 671,
+                                                            lineNumber: 669,
                                                             columnNumber: 21
                                                         }, this),
                                                         s
                                                     ]
                                                 }, s, true, {
                                                     fileName: "[project]/components/home.tsx",
-                                                    lineNumber: 670,
+                                                    lineNumber: 668,
                                                     columnNumber: 19
                                                 }, this))
                                         }, void 0, false, {
                                             fileName: "[project]/components/home.tsx",
-                                            lineNumber: 664,
+                                            lineNumber: 662,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
@@ -1675,19 +1672,19 @@ function Home() {
                                                     size: 18
                                                 }, void 0, false, {
                                                     fileName: "[project]/components/home.tsx",
-                                                    lineNumber: 677,
+                                                    lineNumber: 675,
                                                     columnNumber: 36
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/components/home.tsx",
-                                            lineNumber: 676,
+                                            lineNumber: 674,
                                             columnNumber: 15
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/components/home.tsx",
-                                    lineNumber: 648,
+                                    lineNumber: 646,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(Reveal, {
@@ -1701,7 +1698,7 @@ function Home() {
                                             height: "800"
                                         }, void 0, false, {
                                             fileName: "[project]/components/home.tsx",
-                                            lineNumber: 681,
+                                            lineNumber: 679,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1711,7 +1708,7 @@ function Home() {
                                                     size: 29
                                                 }, void 0, false, {
                                                     fileName: "[project]/components/home.tsx",
-                                                    lineNumber: 689,
+                                                    lineNumber: 687,
                                                     columnNumber: 17
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -1719,43 +1716,43 @@ function Home() {
                                                         "La confiance,",
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("br", {}, void 0, false, {
                                                             fileName: "[project]/components/home.tsx",
-                                                            lineNumber: 692,
+                                                            lineNumber: 690,
                                                             columnNumber: 19
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("strong", {
                                                             children: "première richesse."
                                                         }, void 0, false, {
                                                             fileName: "[project]/components/home.tsx",
-                                                            lineNumber: 693,
+                                                            lineNumber: 691,
                                                             columnNumber: 19
                                                         }, this)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/components/home.tsx",
-                                                    lineNumber: 690,
+                                                    lineNumber: 688,
                                                     columnNumber: 17
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/components/home.tsx",
-                                            lineNumber: 688,
+                                            lineNumber: 686,
                                             columnNumber: 15
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/components/home.tsx",
-                                    lineNumber: 680,
+                                    lineNumber: 678,
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/components/home.tsx",
-                            lineNumber: 647,
+                            lineNumber: 645,
                             columnNumber: 11
                         }, this)
                     }, void 0, false, {
                         fileName: "[project]/components/home.tsx",
-                        lineNumber: 642,
+                        lineNumber: 640,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
@@ -1777,14 +1774,14 @@ function Home() {
                                                             className: "gold-line"
                                                         }, void 0, false, {
                                                             fileName: "[project]/components/home.tsx",
-                                                            lineNumber: 708,
+                                                            lineNumber: 706,
                                                             columnNumber: 19
                                                         }, this),
                                                         "05 — À SUIVRE"
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/components/home.tsx",
-                                                    lineNumber: 707,
+                                                    lineNumber: 705,
                                                     columnNumber: 17
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
@@ -1795,19 +1792,19 @@ function Home() {
                                                             children: "perspectives."
                                                         }, void 0, false, {
                                                             fileName: "[project]/components/home.tsx",
-                                                            lineNumber: 712,
+                                                            lineNumber: 710,
                                                             columnNumber: 32
                                                         }, this)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/components/home.tsx",
-                                                    lineNumber: 711,
+                                                    lineNumber: 709,
                                                     columnNumber: 17
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/components/home.tsx",
-                                            lineNumber: 706,
+                                            lineNumber: 704,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -1815,13 +1812,13 @@ function Home() {
                                             children: "LE REGARD DU GIE"
                                         }, void 0, false, {
                                             fileName: "[project]/components/home.tsx",
-                                            lineNumber: 715,
+                                            lineNumber: 713,
                                             columnNumber: 15
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/components/home.tsx",
-                                    lineNumber: 705,
+                                    lineNumber: 703,
                                     columnNumber: 13
                                 }, this),
                                 __TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$content$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["news"].length ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1834,7 +1831,7 @@ function Home() {
                                                     loading: "lazy"
                                                 }, void 0, false, {
                                                     fileName: "[project]/components/home.tsx",
-                                                    lineNumber: 721,
+                                                    lineNumber: 719,
                                                     columnNumber: 21
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1845,21 +1842,21 @@ function Home() {
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/components/home.tsx",
-                                                    lineNumber: 722,
+                                                    lineNumber: 720,
                                                     columnNumber: 21
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
                                                     children: n.title
                                                 }, void 0, false, {
                                                     fileName: "[project]/components/home.tsx",
-                                                    lineNumber: 725,
+                                                    lineNumber: 723,
                                                     columnNumber: 21
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                                     children: n.description
                                                 }, void 0, false, {
                                                     fileName: "[project]/components/home.tsx",
-                                                    lineNumber: 726,
+                                                    lineNumber: 724,
                                                     columnNumber: 21
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
@@ -1870,24 +1867,24 @@ function Home() {
                                                             size: 16
                                                         }, void 0, false, {
                                                             fileName: "[project]/components/home.tsx",
-                                                            lineNumber: 728,
+                                                            lineNumber: 726,
                                                             columnNumber: 37
                                                         }, this)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/components/home.tsx",
-                                                    lineNumber: 727,
+                                                    lineNumber: 725,
                                                     columnNumber: 21
                                                 }, this)
                                             ]
                                         }, n.url, true, {
                                             fileName: "[project]/components/home.tsx",
-                                            lineNumber: 720,
+                                            lineNumber: 718,
                                             columnNumber: 19
                                         }, this))
                                 }, void 0, false, {
                                     fileName: "[project]/components/home.tsx",
-                                    lineNumber: 718,
+                                    lineNumber: 716,
                                     columnNumber: 15
                                 }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(Reveal, {
                                     className: "news-empty",
@@ -1897,7 +1894,7 @@ function Home() {
                                             children: "↗"
                                         }, void 0, false, {
                                             fileName: "[project]/components/home.tsx",
-                                            lineNumber: 735,
+                                            lineNumber: 733,
                                             columnNumber: 17
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1906,7 +1903,7 @@ function Home() {
                                                     children: "De nouvelles perspectives se préparent."
                                                 }, void 0, false, {
                                                     fileName: "[project]/components/home.tsx",
-                                                    lineNumber: 737,
+                                                    lineNumber: 735,
                                                     columnNumber: 19
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1914,20 +1911,20 @@ function Home() {
                                                         "Les actualités du groupement seront partagées ici.",
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("br", {}, void 0, false, {
                                                             fileName: "[project]/components/home.tsx",
-                                                            lineNumber: 740,
+                                                            lineNumber: 738,
                                                             columnNumber: 21
                                                         }, this),
                                                         "En attendant, faisons connaissance."
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/components/home.tsx",
-                                                    lineNumber: 738,
+                                                    lineNumber: 736,
                                                     columnNumber: 19
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/components/home.tsx",
-                                            lineNumber: 736,
+                                            lineNumber: 734,
                                             columnNumber: 17
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
@@ -1939,30 +1936,30 @@ function Home() {
                                                     size: 19
                                                 }, void 0, false, {
                                                     fileName: "[project]/components/home.tsx",
-                                                    lineNumber: 745,
+                                                    lineNumber: 743,
                                                     columnNumber: 39
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/components/home.tsx",
-                                            lineNumber: 744,
+                                            lineNumber: 742,
                                             columnNumber: 17
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/components/home.tsx",
-                                    lineNumber: 734,
+                                    lineNumber: 732,
                                     columnNumber: 15
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/components/home.tsx",
-                            lineNumber: 704,
+                            lineNumber: 702,
                             columnNumber: 11
                         }, this)
                     }, void 0, false, {
                         fileName: "[project]/components/home.tsx",
-                        lineNumber: 699,
+                        lineNumber: 697,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
@@ -1979,7 +1976,7 @@ function Home() {
                                     }
                                 }, void 0, false, {
                                     fileName: "[project]/components/home.tsx",
-                                    lineNumber: 753,
+                                    lineNumber: 751,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1996,12 +1993,12 @@ function Home() {
                                             }
                                         }, i, false, {
                                             fileName: "[project]/components/home.tsx",
-                                            lineNumber: 762,
+                                            lineNumber: 760,
                                             columnNumber: 17
                                         }, this))
                                 }, void 0, false, {
                                     fileName: "[project]/components/home.tsx",
-                                    lineNumber: 760,
+                                    lineNumber: 758,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2009,7 +2006,7 @@ function Home() {
                                     "aria-hidden": "true"
                                 }, void 0, false, {
                                     fileName: "[project]/components/home.tsx",
-                                    lineNumber: 773,
+                                    lineNumber: 771,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(Reveal, {
@@ -2020,7 +2017,7 @@ function Home() {
                                             children: "DES AMBITIONS AUX ACTIONS"
                                         }, void 0, false, {
                                             fileName: "[project]/components/home.tsx",
-                                            lineNumber: 775,
+                                            lineNumber: 773,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
@@ -2029,27 +2026,27 @@ function Home() {
                                                 "Cultivons les opportunités.",
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("br", {}, void 0, false, {
                                                     fileName: "[project]/components/home.tsx",
-                                                    lineNumber: 778,
+                                                    lineNumber: 776,
                                                     columnNumber: 17
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                                     children: "Construisons demain."
                                                 }, void 0, false, {
                                                     fileName: "[project]/components/home.tsx",
-                                                    lineNumber: 779,
+                                                    lineNumber: 777,
                                                     columnNumber: 17
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/components/home.tsx",
-                                            lineNumber: 776,
+                                            lineNumber: 774,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                             children: "Réunissons nos compétences et nos ressources pour faire grandir des projets durables, ancrés dans les réalités du continent."
                                         }, void 0, false, {
                                             fileName: "[project]/components/home.tsx",
-                                            lineNumber: 781,
+                                            lineNumber: 779,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2064,13 +2061,13 @@ function Home() {
                                                             size: 18
                                                         }, void 0, false, {
                                                             fileName: "[project]/components/home.tsx",
-                                                            lineNumber: 787,
+                                                            lineNumber: 785,
                                                             columnNumber: 45
                                                         }, this)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/components/home.tsx",
-                                                    lineNumber: 786,
+                                                    lineNumber: 784,
                                                     columnNumber: 17
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
@@ -2082,36 +2079,36 @@ function Home() {
                                                             size: 18
                                                         }, void 0, false, {
                                                             fileName: "[project]/components/home.tsx",
-                                                            lineNumber: 790,
+                                                            lineNumber: 788,
                                                             columnNumber: 41
                                                         }, this)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/components/home.tsx",
-                                                    lineNumber: 789,
+                                                    lineNumber: 787,
                                                     columnNumber: 17
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/components/home.tsx",
-                                            lineNumber: 785,
+                                            lineNumber: 783,
                                             columnNumber: 15
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/components/home.tsx",
-                                    lineNumber: 774,
+                                    lineNumber: 772,
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/components/home.tsx",
-                            lineNumber: 752,
+                            lineNumber: 750,
                             columnNumber: 11
                         }, this)
                     }, void 0, false, {
                         fileName: "[project]/components/home.tsx",
-                        lineNumber: 751,
+                        lineNumber: 749,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
@@ -2131,14 +2128,14 @@ function Home() {
                                                     className: "gold-line"
                                                 }, void 0, false, {
                                                     fileName: "[project]/components/home.tsx",
-                                                    lineNumber: 804,
+                                                    lineNumber: 802,
                                                     columnNumber: 17
                                                 }, this),
                                                 "06 — FAISONS LE PREMIER PAS"
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/components/home.tsx",
-                                            lineNumber: 803,
+                                            lineNumber: 801,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
@@ -2147,33 +2144,33 @@ function Home() {
                                                 "Les opportunités",
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("br", {}, void 0, false, {
                                                     fileName: "[project]/components/home.tsx",
-                                                    lineNumber: 809,
+                                                    lineNumber: 807,
                                                     columnNumber: 17
                                                 }, this),
                                                 "de demain commencent",
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("br", {}, void 0, false, {
                                                     fileName: "[project]/components/home.tsx",
-                                                    lineNumber: 811,
+                                                    lineNumber: 809,
                                                     columnNumber: 17
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                                     children: "par un échange."
                                                 }, void 0, false, {
                                                     fileName: "[project]/components/home.tsx",
-                                                    lineNumber: 812,
+                                                    lineNumber: 810,
                                                     columnNumber: 17
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/components/home.tsx",
-                                            lineNumber: 807,
+                                            lineNumber: 805,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                             children: "Vous êtes entrepreneur, investisseur, partenaire ou institution ? Échangeons sur les possibilités de collaboration."
                                         }, void 0, false, {
                                             fileName: "[project]/components/home.tsx",
-                                            lineNumber: 814,
+                                            lineNumber: 812,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2183,7 +2180,7 @@ function Home() {
                                                     size: 30
                                                 }, void 0, false, {
                                                     fileName: "[project]/components/home.tsx",
-                                                    lineNumber: 819,
+                                                    lineNumber: 817,
                                                     columnNumber: 17
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -2191,20 +2188,20 @@ function Home() {
                                                         "Des connexions humaines.",
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("br", {}, void 0, false, {
                                                             fileName: "[project]/components/home.tsx",
-                                                            lineNumber: 822,
+                                                            lineNumber: 820,
                                                             columnNumber: 19
                                                         }, this),
                                                         "Une ambition africaine."
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/components/home.tsx",
-                                                    lineNumber: 820,
+                                                    lineNumber: 818,
                                                     columnNumber: 17
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/components/home.tsx",
-                                            lineNumber: 818,
+                                            lineNumber: 816,
                                             columnNumber: 15
                                         }, this),
                                         __TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$content$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["contact"].email && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
@@ -2216,19 +2213,19 @@ function Home() {
                                                     size: 17
                                                 }, void 0, false, {
                                                     fileName: "[project]/components/home.tsx",
-                                                    lineNumber: 829,
+                                                    lineNumber: 827,
                                                     columnNumber: 19
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/components/home.tsx",
-                                            lineNumber: 827,
+                                            lineNumber: 825,
                                             columnNumber: 17
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/components/home.tsx",
-                                    lineNumber: 802,
+                                    lineNumber: 800,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(Reveal, {
@@ -2240,7 +2237,7 @@ function Home() {
                                                 children: "Parlons de vos ambitions."
                                             }, void 0, false, {
                                                 fileName: "[project]/components/home.tsx",
-                                                lineNumber: 835,
+                                                lineNumber: 833,
                                                 columnNumber: 17
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -2248,7 +2245,7 @@ function Home() {
                                                 children: "Présentez-nous votre idée, votre organisation ou votre envie de collaborer."
                                             }, void 0, false, {
                                                 fileName: "[project]/components/home.tsx",
-                                                lineNumber: 836,
+                                                lineNumber: 834,
                                                 columnNumber: 17
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2261,7 +2258,7 @@ function Home() {
                                                                 children: "*"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/components/home.tsx",
-                                                                lineNumber: 842,
+                                                                lineNumber: 840,
                                                                 columnNumber: 33
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
@@ -2272,13 +2269,13 @@ function Home() {
                                                                 placeholder: "Votre nom"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/components/home.tsx",
-                                                                lineNumber: 843,
+                                                                lineNumber: 841,
                                                                 columnNumber: 21
                                                             }, this)
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/components/home.tsx",
-                                                        lineNumber: 841,
+                                                        lineNumber: 839,
                                                         columnNumber: 19
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("label", {
@@ -2288,7 +2285,7 @@ function Home() {
                                                                 children: "*"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/components/home.tsx",
-                                                                lineNumber: 852,
+                                                                lineNumber: 850,
                                                                 columnNumber: 36
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
@@ -2300,19 +2297,19 @@ function Home() {
                                                                 placeholder: "vous@organisation.com"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/components/home.tsx",
-                                                                lineNumber: 853,
+                                                                lineNumber: 851,
                                                                 columnNumber: 21
                                                             }, this)
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/components/home.tsx",
-                                                        lineNumber: 851,
+                                                        lineNumber: 849,
                                                         columnNumber: 19
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/components/home.tsx",
-                                                lineNumber: 840,
+                                                lineNumber: 838,
                                                 columnNumber: 17
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("label", {
@@ -2323,7 +2320,7 @@ function Home() {
                                                         children: "(facultatif)"
                                                     }, void 0, false, {
                                                         fileName: "[project]/components/home.tsx",
-                                                        lineNumber: 864,
+                                                        lineNumber: 862,
                                                         columnNumber: 32
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
@@ -2333,13 +2330,13 @@ function Home() {
                                                         placeholder: "Le nom de votre organisation"
                                                     }, void 0, false, {
                                                         fileName: "[project]/components/home.tsx",
-                                                        lineNumber: 865,
+                                                        lineNumber: 863,
                                                         columnNumber: 19
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/components/home.tsx",
-                                                lineNumber: 863,
+                                                lineNumber: 861,
                                                 columnNumber: 17
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("label", {
@@ -2349,7 +2346,7 @@ function Home() {
                                                         children: "*"
                                                     }, void 0, false, {
                                                         fileName: "[project]/components/home.tsx",
-                                                        lineNumber: 873,
+                                                        lineNumber: 871,
                                                         columnNumber: 25
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2366,67 +2363,67 @@ function Home() {
                                                                         children: "Comment pouvons-nous collaborer ?"
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/components/home.tsx",
-                                                                        lineNumber: 876,
+                                                                        lineNumber: 874,
                                                                         columnNumber: 23
                                                                     }, this),
                                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
                                                                         children: "Devenir partenaire"
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/components/home.tsx",
-                                                                        lineNumber: 879,
+                                                                        lineNumber: 877,
                                                                         columnNumber: 23
                                                                     }, this),
                                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
                                                                         children: "Rejoindre le GIE"
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/components/home.tsx",
-                                                                        lineNumber: 880,
+                                                                        lineNumber: 878,
                                                                         columnNumber: 23
                                                                     }, this),
                                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
                                                                         children: "Opportunité d’investissement"
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/components/home.tsx",
-                                                                        lineNumber: 881,
+                                                                        lineNumber: 879,
                                                                         columnNumber: 23
                                                                     }, this),
                                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
                                                                         children: "Demande d’information"
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/components/home.tsx",
-                                                                        lineNumber: 882,
+                                                                        lineNumber: 880,
                                                                         columnNumber: 23
                                                                     }, this),
                                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
                                                                         children: "Autre demande"
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/components/home.tsx",
-                                                                        lineNumber: 883,
+                                                                        lineNumber: 881,
                                                                         columnNumber: 23
                                                                     }, this)
                                                                 ]
                                                             }, void 0, true, {
                                                                 fileName: "[project]/components/home.tsx",
-                                                                lineNumber: 875,
+                                                                lineNumber: 873,
                                                                 columnNumber: 21
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$chevron$2d$down$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__ChevronDown$3e$__["ChevronDown"], {
                                                                 size: 16
                                                             }, void 0, false, {
                                                                 fileName: "[project]/components/home.tsx",
-                                                                lineNumber: 885,
+                                                                lineNumber: 883,
                                                                 columnNumber: 21
                                                             }, this)
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/components/home.tsx",
-                                                        lineNumber: 874,
+                                                        lineNumber: 872,
                                                         columnNumber: 19
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/components/home.tsx",
-                                                lineNumber: 872,
+                                                lineNumber: 870,
                                                 columnNumber: 17
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("label", {
@@ -2436,7 +2433,7 @@ function Home() {
                                                         children: "*"
                                                     }, void 0, false, {
                                                         fileName: "[project]/components/home.tsx",
-                                                        lineNumber: 889,
+                                                        lineNumber: 887,
                                                         columnNumber: 33
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("textarea", {
@@ -2448,13 +2445,13 @@ function Home() {
                                                         placeholder: "Quelques mots pour commencer…"
                                                     }, void 0, false, {
                                                         fileName: "[project]/components/home.tsx",
-                                                        lineNumber: 890,
+                                                        lineNumber: 888,
                                                         columnNumber: 19
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/components/home.tsx",
-                                                lineNumber: 888,
+                                                lineNumber: 886,
                                                 columnNumber: 17
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("label", {
@@ -2468,13 +2465,13 @@ function Home() {
                                                         autoComplete: "off"
                                                     }, void 0, false, {
                                                         fileName: "[project]/components/home.tsx",
-                                                        lineNumber: 901,
+                                                        lineNumber: 899,
                                                         columnNumber: 19
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/components/home.tsx",
-                                                lineNumber: 899,
+                                                lineNumber: 897,
                                                 columnNumber: 17
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("label", {
@@ -2486,7 +2483,7 @@ function Home() {
                                                         required: true
                                                     }, void 0, false, {
                                                         fileName: "[project]/components/home.tsx",
-                                                        lineNumber: 904,
+                                                        lineNumber: 902,
                                                         columnNumber: 19
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -2499,19 +2496,19 @@ function Home() {
                                                                 children: "Confidentialité"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/components/home.tsx",
-                                                                lineNumber: 908,
+                                                                lineNumber: 906,
                                                                 columnNumber: 21
                                                             }, this)
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/components/home.tsx",
-                                                        lineNumber: 905,
+                                                        lineNumber: 903,
                                                         columnNumber: 19
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/components/home.tsx",
-                                                lineNumber: 903,
+                                                lineNumber: 901,
                                                 columnNumber: 17
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -2523,13 +2520,13 @@ function Home() {
                                                         size: 17
                                                     }, void 0, false, {
                                                         fileName: "[project]/components/home.tsx",
-                                                        lineNumber: 917,
+                                                        lineNumber: 915,
                                                         columnNumber: 39
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/components/home.tsx",
-                                                lineNumber: 916,
+                                                lineNumber: 914,
                                                 columnNumber: 17
                                             }, this),
                                             !process.env.NEXT_PUBLIC_CONTACT_ENDPOINT && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -2537,7 +2534,7 @@ function Home() {
                                                 children: "L’envoi de messages sera disponible prochainement."
                                             }, void 0, false, {
                                                 fileName: "[project]/components/home.tsx",
-                                                lineNumber: 920,
+                                                lineNumber: 918,
                                                 columnNumber: 19
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -2547,35 +2544,35 @@ function Home() {
                                                 children: formStatus
                                             }, void 0, false, {
                                                 fileName: "[project]/components/home.tsx",
-                                                lineNumber: 924,
+                                                lineNumber: 922,
                                                 columnNumber: 17
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/components/home.tsx",
-                                        lineNumber: 834,
+                                        lineNumber: 832,
                                         columnNumber: 15
                                     }, this)
                                 }, void 0, false, {
                                     fileName: "[project]/components/home.tsx",
-                                    lineNumber: 833,
+                                    lineNumber: 831,
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/components/home.tsx",
-                            lineNumber: 801,
+                            lineNumber: 799,
                             columnNumber: 11
                         }, this)
                     }, void 0, false, {
                         fileName: "[project]/components/home.tsx",
-                        lineNumber: 796,
+                        lineNumber: 794,
                         columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/components/home.tsx",
-                lineNumber: 361,
+                lineNumber: 359,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("footer", {
@@ -2600,7 +2597,7 @@ function Home() {
                                                     height: "78"
                                                 }, void 0, false, {
                                                     fileName: "[project]/components/home.tsx",
-                                                    lineNumber: 937,
+                                                    lineNumber: 935,
                                                     columnNumber: 17
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -2615,25 +2612,25 @@ function Home() {
                                                                     children: "."
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/components/home.tsx",
-                                                                    lineNumber: 946,
+                                                                    lineNumber: 944,
                                                                     columnNumber: 30
                                                                 }, this)
                                                             ]
                                                         }, void 0, true, {
                                                             fileName: "[project]/components/home.tsx",
-                                                            lineNumber: 945,
+                                                            lineNumber: 943,
                                                             columnNumber: 19
                                                         }, this)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/components/home.tsx",
-                                                    lineNumber: 943,
+                                                    lineNumber: 941,
                                                     columnNumber: 17
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/components/home.tsx",
-                                            lineNumber: 936,
+                                            lineNumber: 934,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -2641,20 +2638,20 @@ function Home() {
                                                 "Rassembler les ambitions.",
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("br", {}, void 0, false, {
                                                     fileName: "[project]/components/home.tsx",
-                                                    lineNumber: 952,
+                                                    lineNumber: 950,
                                                     columnNumber: 17
                                                 }, this),
                                                 "Ouvrir le champ des possibles."
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/components/home.tsx",
-                                            lineNumber: 950,
+                                            lineNumber: 948,
                                             columnNumber: 15
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/components/home.tsx",
-                                    lineNumber: 935,
+                                    lineNumber: 933,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2664,7 +2661,7 @@ function Home() {
                                             children: "Navigation"
                                         }, void 0, false, {
                                             fileName: "[project]/components/home.tsx",
-                                            lineNumber: 957,
+                                            lineNumber: 955,
                                             columnNumber: 15
                                         }, this),
                                         navigation.slice(1).map(([label, href])=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
@@ -2672,13 +2669,13 @@ function Home() {
                                                 children: label
                                             }, href, false, {
                                                 fileName: "[project]/components/home.tsx",
-                                                lineNumber: 959,
+                                                lineNumber: 957,
                                                 columnNumber: 17
                                             }, this))
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/components/home.tsx",
-                                    lineNumber: 956,
+                                    lineNumber: 954,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2688,21 +2685,21 @@ function Home() {
                                             children: "Nos domaines"
                                         }, void 0, false, {
                                             fileName: "[project]/components/home.tsx",
-                                            lineNumber: 965,
+                                            lineNumber: 963,
                                             columnNumber: 15
                                         }, this),
-                                        __TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$content$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["sectors"].map((s)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
-                                                onClick: ()=>setSelectedSector(s.id),
+                                        __TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$content$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["sectors"].map((s)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
+                                                href: `/domaines/${s.id}`,
                                                 children: s.title
                                             }, s.id, false, {
                                                 fileName: "[project]/components/home.tsx",
-                                                lineNumber: 967,
+                                                lineNumber: 965,
                                                 columnNumber: 17
                                             }, this))
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/components/home.tsx",
-                                    lineNumber: 964,
+                                    lineNumber: 962,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2712,7 +2709,7 @@ function Home() {
                                             children: "Liens utiles"
                                         }, void 0, false, {
                                             fileName: "[project]/components/home.tsx",
-                                            lineNumber: 973,
+                                            lineNumber: 971,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
@@ -2720,7 +2717,7 @@ function Home() {
                                             children: "Notre vision"
                                         }, void 0, false, {
                                             fileName: "[project]/components/home.tsx",
-                                            lineNumber: 974,
+                                            lineNumber: 972,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
@@ -2728,7 +2725,7 @@ function Home() {
                                             children: "Devenir partenaire"
                                         }, void 0, false, {
                                             fileName: "[project]/components/home.tsx",
-                                            lineNumber: 975,
+                                            lineNumber: 973,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
@@ -2736,7 +2733,7 @@ function Home() {
                                             children: "Actualités"
                                         }, void 0, false, {
                                             fileName: "[project]/components/home.tsx",
-                                            lineNumber: 976,
+                                            lineNumber: 974,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
@@ -2744,7 +2741,7 @@ function Home() {
                                             children: "Nous contacter"
                                         }, void 0, false, {
                                             fileName: "[project]/components/home.tsx",
-                                            lineNumber: 977,
+                                            lineNumber: 975,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2755,19 +2752,19 @@ function Home() {
                                                     size: 19
                                                 }, void 0, false, {
                                                     fileName: "[project]/components/home.tsx",
-                                                    lineNumber: 980,
+                                                    lineNumber: 978,
                                                     columnNumber: 56
                                                 }, this) : label === "YouTube" ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$youtube$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__Youtube$3e$__["Youtube"], {
                                                     size: 19
                                                 }, void 0, false, {
                                                     fileName: "[project]/components/home.tsx",
-                                                    lineNumber: 981,
+                                                    lineNumber: 979,
                                                     columnNumber: 45
                                                 }, this) : label === "Facebook" ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$facebook$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__Facebook$3e$__["Facebook"], {
                                                     size: 19
                                                 }, void 0, false, {
                                                     fileName: "[project]/components/home.tsx",
-                                                    lineNumber: 982,
+                                                    lineNumber: 980,
                                                     columnNumber: 46
                                                 }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("svg", {
                                                     width: "19",
@@ -2779,12 +2776,12 @@ function Home() {
                                                         d: "M16.6 2H13v13.2a3 3 0 1 1-2.6-3V8.6a6.6 6.6 0 1 0 6.2 6.6V8.5a9 9 0 0 0 5.4 1.8V6.7A5.4 5.4 0 0 1 16.6 2Z"
                                                     }, void 0, false, {
                                                         fileName: "[project]/components/home.tsx",
-                                                        lineNumber: 983,
+                                                        lineNumber: 981,
                                                         columnNumber: 110
                                                     }, this)
                                                 }, void 0, false, {
                                                     fileName: "[project]/components/home.tsx",
-                                                    lineNumber: 983,
+                                                    lineNumber: 981,
                                                     columnNumber: 23
                                                 }, this);
                                                 return url ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
@@ -2801,7 +2798,7 @@ function Home() {
                                                     children: icon
                                                 }, label, false, {
                                                     fileName: "[project]/components/home.tsx",
-                                                    lineNumber: 985,
+                                                    lineNumber: 983,
                                                     columnNumber: 21
                                                 }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                                     className: "social-pending",
@@ -2811,25 +2808,25 @@ function Home() {
                                                     children: icon
                                                 }, label, false, {
                                                     fileName: "[project]/components/home.tsx",
-                                                    lineNumber: 995,
+                                                    lineNumber: 993,
                                                     columnNumber: 21
                                                 }, this);
                                             })
                                         }, void 0, false, {
                                             fileName: "[project]/components/home.tsx",
-                                            lineNumber: 978,
+                                            lineNumber: 976,
                                             columnNumber: 15
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/components/home.tsx",
-                                    lineNumber: 972,
+                                    lineNumber: 970,
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/components/home.tsx",
-                            lineNumber: 934,
+                            lineNumber: 932,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2843,7 +2840,7 @@ function Home() {
                                             "aria-hidden": "true"
                                         }, void 0, false, {
                                             fileName: "[project]/components/home.tsx",
-                                            lineNumber: 1006,
+                                            lineNumber: 1004,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -2851,20 +2848,20 @@ function Home() {
                                                 "Ancrés en Afrique.",
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("br", {}, void 0, false, {
                                                     fileName: "[project]/components/home.tsx",
-                                                    lineNumber: 1007,
+                                                    lineNumber: 1005,
                                                     columnNumber: 39
                                                 }, this),
                                                 "Ouverts sur le monde."
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/components/home.tsx",
-                                            lineNumber: 1007,
+                                            lineNumber: 1005,
                                             columnNumber: 15
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/components/home.tsx",
-                                    lineNumber: 1005,
+                                    lineNumber: 1003,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
@@ -2876,20 +2873,20 @@ function Home() {
                                             "aria-hidden": "true"
                                         }, void 0, false, {
                                             fileName: "[project]/components/home.tsx",
-                                            lineNumber: 1010,
+                                            lineNumber: 1008,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                             children: __TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$content$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["contact"].email
                                         }, void 0, false, {
                                             fileName: "[project]/components/home.tsx",
-                                            lineNumber: 1011,
+                                            lineNumber: 1009,
                                             columnNumber: 15
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/components/home.tsx",
-                                    lineNumber: 1009,
+                                    lineNumber: 1007,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
@@ -2901,19 +2898,19 @@ function Home() {
                                             size: 19
                                         }, void 0, false, {
                                             fileName: "[project]/components/home.tsx",
-                                            lineNumber: 1014,
+                                            lineNumber: 1012,
                                             columnNumber: 37
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/components/home.tsx",
-                                    lineNumber: 1013,
+                                    lineNumber: 1011,
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/components/home.tsx",
-                            lineNumber: 1004,
+                            lineNumber: 1002,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2927,7 +2924,7 @@ function Home() {
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/components/home.tsx",
-                                    lineNumber: 1018,
+                                    lineNumber: 1016,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2937,7 +2934,7 @@ function Home() {
                                             children: "Mentions légales"
                                         }, void 0, false, {
                                             fileName: "[project]/components/home.tsx",
-                                            lineNumber: 1020,
+                                            lineNumber: 1018,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -2945,7 +2942,7 @@ function Home() {
                                             children: "Confidentialité"
                                         }, void 0, false, {
                                             fileName: "[project]/components/home.tsx",
-                                            lineNumber: 1023,
+                                            lineNumber: 1021,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
@@ -2957,36 +2954,36 @@ function Home() {
                                                     size: 15
                                                 }, void 0, false, {
                                                     fileName: "[project]/components/home.tsx",
-                                                    lineNumber: 1027,
+                                                    lineNumber: 1025,
                                                     columnNumber: 32
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/components/home.tsx",
-                                            lineNumber: 1026,
+                                            lineNumber: 1024,
                                             columnNumber: 15
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/components/home.tsx",
-                                    lineNumber: 1019,
+                                    lineNumber: 1017,
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/components/home.tsx",
-                            lineNumber: 1017,
+                            lineNumber: 1015,
                             columnNumber: 11
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/components/home.tsx",
-                    lineNumber: 933,
+                    lineNumber: 931,
                     columnNumber: 9
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/components/home.tsx",
-                lineNumber: 932,
+                lineNumber: 930,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("dialog", {
@@ -2994,12 +2991,10 @@ function Home() {
                 className: "detail-dialog",
                 onCancel: ()=>{
                     setLegal(null);
-                    setSelectedSector(null);
                 },
                 onClick: (e)=>{
                     if (e.target === e.currentTarget) {
                         setLegal(null);
-                        setSelectedSector(null);
                     }
                 },
                 children: [
@@ -3007,89 +3002,19 @@ function Home() {
                         className: "dialog-close",
                         onClick: ()=>{
                             setLegal(null);
-                            setSelectedSector(null);
                         },
                         "aria-label": "Fermer la fenêtre",
                         children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$x$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__X$3e$__["X"], {}, void 0, false, {
                             fileName: "[project]/components/home.tsx",
-                            lineNumber: 1055,
+                            lineNumber: 1050,
                             columnNumber: 11
                         }, this)
                     }, void 0, false, {
                         fileName: "[project]/components/home.tsx",
-                        lineNumber: 1047,
+                        lineNumber: 1043,
                         columnNumber: 9
                     }, this),
-                    currentSector ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Fragment"], {
-                        children: [
-                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("img", {
-                                className: "dialog-image",
-                                src: currentSector.image,
-                                alt: currentSector.alt
-                            }, void 0, false, {
-                                fileName: "[project]/components/home.tsx",
-                                lineNumber: 1059,
-                                columnNumber: 13
-                            }, this),
-                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                className: "dialog-content",
-                                children: [
-                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                        className: "eyebrow",
-                                        children: [
-                                            "DOMAINE ",
-                                            currentSector.number
-                                        ]
-                                    }, void 0, true, {
-                                        fileName: "[project]/components/home.tsx",
-                                        lineNumber: 1065,
-                                        columnNumber: 15
-                                    }, this),
-                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
-                                        children: currentSector.title
-                                    }, void 0, false, {
-                                        fileName: "[project]/components/home.tsx",
-                                        lineNumber: 1066,
-                                        columnNumber: 15
-                                    }, this),
-                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                        children: currentSector.description
-                                    }, void 0, false, {
-                                        fileName: "[project]/components/home.tsx",
-                                        lineNumber: 1067,
-                                        columnNumber: 15
-                                    }, this),
-                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
-                                        href: "#contact",
-                                        className: "button gold",
-                                        onClick: ()=>setSelectedSector(null),
-                                        children: [
-                                            "Échanger avec le GIE ",
-                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$arrow$2d$up$2d$right$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__ArrowUpRight$3e$__["ArrowUpRight"], {
-                                                size: 18
-                                            }, void 0, false, {
-                                                fileName: "[project]/components/home.tsx",
-                                                lineNumber: 1073,
-                                                columnNumber: 38
-                                            }, this)
-                                        ]
-                                    }, void 0, true, {
-                                        fileName: "[project]/components/home.tsx",
-                                        lineNumber: 1068,
-                                        columnNumber: 15
-                                    }, this)
-                                ]
-                            }, void 0, true, {
-                                fileName: "[project]/components/home.tsx",
-                                lineNumber: 1064,
-                                columnNumber: 13
-                            }, this)
-                        ]
-                    }, void 0, true, {
-                        fileName: "[project]/components/home.tsx",
-                        lineNumber: 1058,
-                        columnNumber: 11
-                    }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                         className: "dialog-content legal-content",
                         children: [
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3097,14 +3022,14 @@ function Home() {
                                 children: "GIE OPPORTUNITÉ D’AFRIQUE"
                             }, void 0, false, {
                                 fileName: "[project]/components/home.tsx",
-                                lineNumber: 1079,
+                                lineNumber: 1053,
                                 columnNumber: 13
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
                                 children: legal === "mentions" ? "Mentions légales" : "Confidentialité"
                             }, void 0, false, {
                                 fileName: "[project]/components/home.tsx",
-                                lineNumber: 1080,
+                                lineNumber: 1054,
                                 columnNumber: 13
                             }, this),
                             legal === "mentions" ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Fragment"], {
@@ -3113,20 +3038,20 @@ function Home() {
                                         children: "Ce site présente les activités et la vision du GIE Opportunité d’Afrique."
                                     }, void 0, false, {
                                         fileName: "[project]/components/home.tsx",
-                                        lineNumber: 1085,
+                                        lineNumber: 1059,
                                         columnNumber: 17
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                         children: "Les informations d’immatriculation, le siège social, le responsable de publication et les coordonnées officielles sont en cours de validation. Elles devront être complétées avant l’ouverture publique du site."
                                     }, void 0, false, {
                                         fileName: "[project]/components/home.tsx",
-                                        lineNumber: 1089,
+                                        lineNumber: 1063,
                                         columnNumber: 17
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/components/home.tsx",
-                                lineNumber: 1084,
+                                lineNumber: 1058,
                                 columnNumber: 15
                             }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Fragment"], {
                                 children: [
@@ -3134,45 +3059,45 @@ function Home() {
                                         children: "Le formulaire recueille uniquement les informations que vous saisissez pour traiter votre demande de contact. L’envoi n’est pas activé tant que le service de messagerie n’est pas configuré."
                                     }, void 0, false, {
                                         fileName: "[project]/components/home.tsx",
-                                        lineNumber: 1098,
+                                        lineNumber: 1072,
                                         columnNumber: 17
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                         children: "Votre préférence de thème est enregistrée localement dans votre navigateur. Aucun outil de mesure d’audience ni cookie publicitaire n’est intégré à cette version."
                                     }, void 0, false, {
                                         fileName: "[project]/components/home.tsx",
-                                        lineNumber: 1104,
+                                        lineNumber: 1078,
                                         columnNumber: 17
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                         children: "Le responsable du traitement, les destinataires, la durée de conservation et le contact pour exercer vos droits seront précisés avant l’activation du formulaire."
                                     }, void 0, false, {
                                         fileName: "[project]/components/home.tsx",
-                                        lineNumber: 1109,
+                                        lineNumber: 1083,
                                         columnNumber: 17
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/components/home.tsx",
-                                lineNumber: 1097,
+                                lineNumber: 1071,
                                 columnNumber: 15
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/components/home.tsx",
-                        lineNumber: 1078,
+                        lineNumber: 1052,
                         columnNumber: 11
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/components/home.tsx",
-                lineNumber: 1033,
+                lineNumber: 1031,
                 columnNumber: 7
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/components/home.tsx",
-        lineNumber: 280,
+        lineNumber: 278,
         columnNumber: 5
     }, this);
 }

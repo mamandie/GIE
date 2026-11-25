@@ -1837,3 +1837,62 @@ footer {
     transition: none !important;
   }
 }
+
+/* Pages des domaines */
+.domain-header { background: var(--surface); border-bottom: 1px solid var(--line); }
+.domain-nav { display: flex; justify-content: space-between; align-items: center; gap: 24px; padding-block: 20px; }
+.domain-back, .domain-footer a { display: inline-flex; align-items: center; gap: 10px; font-size: 12px; }
+.domain-back:hover, .domain-footer a:hover { color: var(--gold); }
+.domain-hero { position: relative; min-height: 580px; display: flex; align-items: flex-end; background: #06131e; color: #f8f7f3; overflow: hidden; }
+.domain-hero-image, .domain-hero-shade { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.domain-hero-shade { background: linear-gradient(90deg, #06131ec9, #06131e24), linear-gradient(0deg, #06131ef2, transparent 85%); }
+.domain-hero-content { position: relative; padding-block: 36px 64px; }
+.domain-breadcrumb { display: flex; flex-wrap: wrap; gap: 12px; font-size: 11px; color: #d0d8e1; margin-bottom: 80px; }
+.domain-breadcrumb a:hover { color: #e8b74f; }
+.domain-hero .eyebrow { color: #e8b74f; flex-wrap: wrap; line-height: 1.8; }
+.domain-hero h1 { font-size: clamp(48px, 8vw, 110px); letter-spacing: -3px; font-weight: 500; line-height: 1.1; overflow-wrap: anywhere; }
+.domain-hero h1 > span { color: #e8b74f; }
+.domain-hero-content > p { color: #e1e5eb; font-size: clamp(16px, 2vw, 24px); margin-top: 22px; max-width: 680px; line-height: 1.6; }
+.domain-hero-link { display: inline-flex; align-items: center; gap: 20px; font-size: 12px; margin-top: 32px; border-bottom: 1px solid #e8b74f; padding-bottom: 10px; }
+.domain-intro-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 72px; align-items: start; }
+.domain-intro h2, .domain-contact h2 { font-size: clamp(30px, 3.3vw, 46px); }
+.domain-prose p { font-size: 15px; line-height: 1.95; }
+.domain-prose p + p { margin-top: 24px; color: var(--text); border-left: 2px solid var(--gold); padding-left: 24px; }
+.domain-axes { background: var(--surface); border-block: 1px solid var(--line); }
+.domain-axis-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 48px; }
+.domain-axis { padding: 32px; border: 1px solid var(--line); border-radius: 20px; background: var(--bg); }
+.domain-axis-number { color: var(--gold); font-size: 13px; }
+.domain-axis h3 { font-size: 21px; line-height: 1.5; margin: 36px 0 16px; }
+.domain-axis p { font-size: 13px; line-height: 1.9; }
+.domain-contact { display: flex; align-items: center; justify-content: space-between; gap: 40px; padding: 56px; border: 1px solid var(--line); border-radius: 28px; background: var(--surface); }
+.domain-contact p { max-width: 580px; margin-top: 24px; font-size: 14px; line-height: 1.9; }
+.domain-contact .button { flex-shrink: 0; }
+.domain-explore { padding-bottom: 90px; }
+.domain-explore h2 { font-size: clamp(30px, 3.3vw, 46px); }
+.domain-other-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 36px; }
+.domain-other { position: relative; height: 235px; border-radius: 20px; overflow: hidden; background: #06131e; }
+.domain-other::after { content: ""; position: absolute; inset: 0; background: linear-gradient(0deg, #06131ef2, #06131e15); }
+.domain-other img { width: 100%; height: 100%; object-fit: cover; transition: transform .3s; }
+.domain-other:hover img { transform: scale(1.05); }
+.domain-other > span { position: absolute; z-index: 1; bottom: 26px; left: 24px; right: 24px; color: #f8f7f3; font-size: 22px; display: flex; align-items: center; gap: 12px; }
+.domain-other small { color: #e8b74f; font-size: 11px; }
+.domain-other svg { margin-left: auto; flex-shrink: 0; }
+.domain-footer { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 20px; padding-block: 30px; border-top: 1px solid var(--line); font-size: 12px; color: var(--muted); }
+@media (max-width: 900px) {
+  .domain-intro-grid { grid-template-columns: 1fr; gap: 32px; }
+  .domain-axis-grid { grid-template-columns: 1fr; }
+  .domain-axis h3 { margin-top: 20px; }
+  .domain-contact { flex-direction: column; align-items: flex-start; padding: 32px; }
+  .domain-other-grid { grid-template-columns: 1fr; }
+}
+@media (max-width: 600px) {
+  .domain-nav { width: calc(100% - 32px); gap: 12px; }
+  .domain-nav .brand { font-size: 13px; gap: 6px; }
+  .domain-nav .brand img { width: 40px; height: 40px; }
+  .domain-back { font-size: 10px; gap: 6px; }
+  .domain-hero { min-height: 520px; }
+  .domain-breadcrumb { margin-bottom: 64px; }
+  .domain-hero h1 { letter-spacing: -2px; }
+  .domain-contact { padding: 24px; }
+  .domain-contact .button { width: 100%; gap: 12px; padding-inline: 12px; }
+}

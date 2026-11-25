@@ -154,7 +154,6 @@ export default function Home() {
   const [scrolled, setScrolled] = useState(false);
   const [active, setActive] = useState("#accueil");
   const [expanded, setExpanded] = useState(false);
-  const [selectedSector, setSelectedSector] = useState<string | null>(null);
   const [legal, setLegal] = useState<string | null>(null);
   const [paused, setPaused] = useState(false);
   const [formStatus, setFormStatus] = useState("");
@@ -223,9 +222,9 @@ export default function Home() {
     };
   }, [menuOpen]);
   useEffect(() => {
-    if (selectedSector || legal) modal.current?.showModal();
+    if (legal) modal.current?.showModal();
     else modal.current?.close();
-  }, [selectedSector, legal]);
+  }, [legal]);
   const toggleTheme = () => {
     const next = theme === "dark" ? "light" : "dark";
     setTheme(next);
@@ -275,7 +274,6 @@ export default function Home() {
       );
     }
   };
-  const currentSector = sectors.find((s) => s.id === selectedSector);
   return (
     <>
       <a className="skip-link" href="#contenu">
@@ -437,7 +435,7 @@ export default function Home() {
             ].map(([Icon, label]) => {
               const I = Icon as typeof Sprout;
               return (
-                <a key={label as string} href="#domaines">
+                <a key={label as string} href={`/domaines/${sectors.find((sector) => sector.title === label)?.id}`}>
                   <I size={20} />
                   <span>{label as string}</span>
                   <span className="ribbon-star">✦</span>
@@ -576,8 +574,8 @@ export default function Home() {
                     <span>{s.number} /</span>
                     <span>{s.tag}</span>
                   </div>
-                  <button
-                    onClick={() => setSelectedSector(s.id)}
+                  <a
+                    href={`/domaines/${s.id}`}
                     className="sector-body"
                     aria-label={`Découvrir le domaine ${s.title}`}
                   >
@@ -588,7 +586,7 @@ export default function Home() {
                     <span className="sector-arrow">
                       <ArrowUpRight size={23} />
                     </span>
-                  </button>
+                  </a>
                 </Reveal>
               ))}
             </div>
@@ -964,9 +962,9 @@ export default function Home() {
             <div className="footer-links">
               <h3>Nos domaines</h3>
               {sectors.map((s) => (
-                <button key={s.id} onClick={() => setSelectedSector(s.id)}>
+                <a key={s.id} href={`/domaines/${s.id}`}>
                   {s.title}
-                </button>
+                </a>
               ))}
             </div>
             <div className="footer-links">
@@ -1035,12 +1033,10 @@ export default function Home() {
         className="detail-dialog"
         onCancel={() => {
           setLegal(null);
-          setSelectedSector(null);
         }}
         onClick={(e) => {
           if (e.target === e.currentTarget) {
             setLegal(null);
-            setSelectedSector(null);
           }
         }}
       >
@@ -1048,33 +1044,11 @@ export default function Home() {
           className="dialog-close"
           onClick={() => {
             setLegal(null);
-            setSelectedSector(null);
           }}
           aria-label="Fermer la fenêtre"
         >
           <X />
         </button>
-        {currentSector ? (
-          <>
-            <img
-              className="dialog-image"
-              src={currentSector.image}
-              alt={currentSector.alt}
-            />
-            <div className="dialog-content">
-              <div className="eyebrow">DOMAINE {currentSector.number}</div>
-              <h2>{currentSector.title}</h2>
-              <p>{currentSector.description}</p>
-              <a
-                href="#contact"
-                className="button gold"
-                onClick={() => setSelectedSector(null)}
-              >
-                Échanger avec le GIE <ArrowUpRight size={18} />
-              </a>
-            </div>
-          </>
-        ) : (
           <div className="dialog-content legal-content">
             <div className="eyebrow">GIE OPPORTUNITÉ D’AFRIQUE</div>
             <h2>
@@ -1114,7 +1088,6 @@ export default function Home() {
               </>
             )}
           </div>
-        )}
       </dialog>
     </>
   );
