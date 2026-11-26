@@ -11,7 +11,7 @@ const port = Number(process.env.FTP_PORT || 22);
 const username = process.env.FTP_USERNAME;
 const password = process.env.FTP_PASSWORD;
 const localDir = process.env.DEPLOY_LOCAL_DIR || "./out";
-const remoteDir = process.env.DEPLOY_REMOTE_DIR || "www";
+let remoteDir = process.env.DEPLOY_REMOTE_DIR || "";
 
 if (!host || !username || !password) {
   console.error("Missing FTP_SERVER / FTP_USERNAME / FTP_PASSWORD");
@@ -30,6 +30,7 @@ function walk(dir, base = "") {
 
 function mkdirp(sftp, dir) {
   return new Promise((resolve) => {
+    if (!dir || dir === "." || dir === "/") return resolve();
     sftp.mkdir(dir, () => {
       const parent = path.posix.dirname(dir);
       if (parent && parent !== dir && parent !== "." && parent !== "/") {
@@ -51,6 +52,39 @@ function unlink(sftp, remote) {
   return new Promise((resolve) => sftp.unlink(remote, () => resolve()));
 }
 
+function readdir(sftp, dir) {
+  return new Promise((resolve, reject) => {
+    sftp.readdir(dir, (err, list) => (err ? reject(err) : resolve(list)));
+  });
+}
+
+function exists(sftp, p) {
+  return new Promise((resolve) => sftp.stat(p, (err, s) => resolve(!err && s)));
+}
+
+async function detectDocroot(sftp) {
+  if (await exists(sftp, "index.html")) return ".";
+  let entries;
+  try {
+    entries = await readdir(sftp, ".");
+  } catch {
+    return "www";
+  }
+  for (const e of entries) {
+    const name = e.filename;
+    if (!name || name === "." || name === "..") continue;
+    let isDir = false;
+    try {
+      isDir = e.attrs && e.attrs.isDirectory();
+    } catch {
+      isDir = false;
+    }
+    if (!isDir) continue;
+    if (await exists(sftp, `${name}/index.html`)) return name;
+  }
+  return "www";
+}
+
 const conn = new Client();
 
 conn.on("ready", () => {
@@ -61,18 +95,21 @@ conn.on("ready", () => {
       process.exit(1);
     }
     try {
+      if (!remoteDir) {
+        remoteDir = await detectDocroot(sftp);
+        console.log("Detected remote docroot:", remoteDir);
+      }
       const files = walk(localDir);
       await mkdirp(sftp, remoteDir);
       let count = 0;
       for (const file of files) {
-        const remote = `${remoteDir}/${file.remote}`;
+        const remote = remoteDir === "." ? file.remote : `${remoteDir}/${file.remote}`;
         await mkdirp(sftp, path.posix.dirname(remote));
         await unlink(sftp, remote);
         await fastPut(sftp, file.local, remote);
-        console.log("uploaded", file.remote);
         count++;
       }
-      console.log(`Deployed ${count} files to ${remoteDir}/`);
+      console.log(`Deployed ${count} files to ${remoteDir === "." ? "(root)" : remoteDir + "/"}`);
       conn.end();
     } catch (e) {
       console.error("Deploy failed:", e.message);
