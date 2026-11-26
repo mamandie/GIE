@@ -47,6 +47,10 @@ function fastPut(sftp, local, remote) {
   });
 }
 
+function unlink(sftp, remote) {
+  return new Promise((resolve) => sftp.unlink(remote, () => resolve()));
+}
+
 const conn = new Client();
 
 conn.on("ready", () => {
@@ -63,6 +67,7 @@ conn.on("ready", () => {
       for (const file of files) {
         const remote = `${remoteDir}/${file.remote}`;
         await mkdirp(sftp, path.posix.dirname(remote));
+        await unlink(sftp, remote);
         await fastPut(sftp, file.local, remote);
         console.log("uploaded", file.remote);
         count++;
@@ -82,4 +87,4 @@ conn.on("error", (e) => {
   process.exit(1);
 });
 
-conn.connect({ host, port, username, password, readyTimeout: 20000 });
+conn.connect({ host, port, username, password, readyTimeout: 20000, keepaliveInterval: 10000 });
