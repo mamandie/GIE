@@ -63,12 +63,28 @@ function exists(sftp, p) {
 }
 
 async function detectDocroot(sftp) {
-  if (await exists(sftp, "index.html")) return ".";
+  if (await exists(sftp, "index.html")) {
+    console.log("Root contains index.html -> docroot = .");
+    return ".";
+  }
   let entries;
   try {
     entries = await readdir(sftp, ".");
   } catch {
     return "www";
+  }
+  console.log("Root directory listing:");
+  for (const e of entries) {
+    const name = e.filename;
+    if (!name || name === "." || name === "..") continue;
+    let isDir = false;
+    try {
+      isDir = e.attrs && e.attrs.isDirectory();
+    } catch {
+      isDir = false;
+    }
+    const hasIndex = isDir ? await exists(sftp, `${name}/index.html`) : false;
+    console.log(`  ${isDir ? "[DIR]" : "[FILE]"} ${name}${hasIndex ? "  <-- contains index.html" : ""}`);
   }
   for (const e of entries) {
     const name = e.filename;
