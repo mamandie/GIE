@@ -34,16 +34,9 @@ jobs:
         run: npm run build
 
       - name: Deploy out/ to OVH via SFTP
-        uses: pressidium/lftp-mirror-action@v1
-        with:
-          host: ${{ secrets.FTP_SERVER }}
-          port: ${{ secrets.FTP_PORT || '22' }}
-          user: ${{ secrets.FTP_USERNAME }}
-          pass: ${{ secrets.FTP_PASSWORD }}
-          localDir: './out'
-          remoteDir: 'www/'
-          reverse: 'true'
-          onlyNewer: 'false'
-          restoreMTime: 'false'
-          settings: 'sftp:auto-confirm=yes'
-          options: '--verbose'
+        env:
+          FTP_SERVER: ${{ secrets.FTP_SERVER }}
+          FTP_USERNAME: ${{ secrets.FTP_USERNAME }}
+          FTP_PASSWORD: ${{ secrets.FTP_PASSWORD }}
+          FTP_PORT: ${{ secrets.FTP_PORT || 22 }}
+        run: node scripts/deploy-sftp.mjs
