@@ -34,12 +34,16 @@ jobs:
         run: npm run build
 
       - name: Deploy out/ to OVH via SFTP
-        env:
-          FTP_SERVER: ${{ secrets.FTP_SERVER }}
-          FTP_USERNAME: ${{ secrets.FTP_USERNAME }}
-          FTP_PASSWORD: ${{ secrets.FTP_PASSWORD }}
-          FTP_PORT: ${{ secrets.FTP_PORT || 22 }}
-        run: |
-          sudo apt-get install -y -qq lftp
-          timeout 600 lftp -u "$FTP_USERNAME","$FTP_PASSWORD" "sftp://$FTP_SERVER:$FTP_PORT" \
-            -e "set sftp:auto-confirm yes; set net:timeout 20; set net:max-retries 2; mirror -R --verbose ./out/ www/; bye"
+        uses: pressidium/lftp-mirror-action@v1
+        with:
+          host: ${{ secrets.FTP_SERVER }}
+          port: ${{ secrets.FTP_PORT || '22' }}
+          user: ${{ secrets.FTP_USERNAME }}
+          pass: ${{ secrets.FTP_PASSWORD }}
+          localDir: './out'
+          remoteDir: 'www/'
+          reverse: 'true'
+          onlyNewer: 'false'
+          restoreMTime: 'false'
+          settings: 'sftp:auto-confirm=yes'
+          options: '--verbose'
