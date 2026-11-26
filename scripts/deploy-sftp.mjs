@@ -11,7 +11,7 @@ const port = Number(process.env.FTP_PORT || 22);
 const username = process.env.FTP_USERNAME;
 const password = process.env.FTP_PASSWORD;
 const localDir = process.env.DEPLOY_LOCAL_DIR || "./out";
-let remoteDir = process.env.DEPLOY_REMOTE_DIR || "";
+let remoteDir = process.env.DEPLOY_REMOTE_DIR || "26kfape5xi/out";
 
 if (!host || !username || !password) {
   console.error("Missing FTP_SERVER / FTP_USERNAME / FTP_PASSWORD");
