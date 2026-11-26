@@ -2,7 +2,11 @@ import { Client } from "ssh2";
 import fs from "node:fs";
 import path from "node:path";
 
-const host = process.env.FTP_SERVER;
+const rawHost = process.env.FTP_SERVER || "";
+const host = rawHost
+  .replace(/^[a-z]+:\/\//i, "")
+  .replace(/\/.*$/, "")
+  .split(":")[0];
 const port = Number(process.env.FTP_PORT || 22);
 const username = process.env.FTP_USERNAME;
 const password = process.env.FTP_PASSWORD;
