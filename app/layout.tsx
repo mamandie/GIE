@@ -48,6 +48,9 @@ export const metadata: Metadata = {
   },
   robots: { index: true, follow: true },
   icons: { icon: "/images/logo.png", apple: "/images/logo.png" },
+  verification: {
+    google: "c8bNJSB3XV_5m6JNdWfkaJsTKt8qWF7iienNNVyRsQ8",
+  },
 };
 
 const organizationJsonLd = {
