@@ -18,6 +18,20 @@ if (!host || !username || !password) {
   process.exit(1);
 }
 
+// Apache (OVH) sert index.html via DirectoryIndex : on crée domaines/<slug>/index.html
+// pour que les URLs propres /domaines/<slug> chargent la page (sans dépendre du .htaccess).
+const domainesDir = path.join(localDir, "domaines");
+if (fs.existsSync(domainesDir)) {
+  for (const f of fs.readdirSync(domainesDir)) {
+    if (f.endsWith(".html")) {
+      const slug = f.slice(0, -".html".length);
+      const dir = path.join(domainesDir, slug);
+      fs.mkdirSync(dir, { recursive: true });
+      fs.copyFileSync(path.join(domainesDir, f), path.join(dir, "index.html"));
+    }
+  }
+}
+
 function walk(dir, base = "") {
   const files = [];
   for (const entry of fs.readdirSync(dir, { withFileTypes: true })) {
