@@ -15,9 +15,15 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const sector = sectors.find((item) => item.id === slug);
   if (!sector) notFound();
   return {
-    title: `${sector.title} — GIE Opportunité d’Afrique`,
+    title: sector.title,
     description: sector.description,
-    openGraph: { title: `${sector.title} — GIE Opportunité d’Afrique`, description: sector.description, images: [sector.image] },
+    alternates: { canonical: `/domaines/${sector.id}` },
+    openGraph: {
+      title: `${sector.title} — GIE Opportunité d’Afrique`,
+      description: sector.description,
+      url: `/domaines/${sector.id}`,
+      images: [sector.image],
+    },
   };
 }
 export default async function SectorPage({ params }: Props) {

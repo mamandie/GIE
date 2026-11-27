@@ -12,15 +12,58 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist
 ;
 ;
 ;
+const SITE_URL = "https://goa.sn";
 const metadata = {
-    metadataBase: new URL("https://gie-opportunite-afrique.ramaubuntu96.chatgpt.site"),
-    title: "GIE Opportunité d’Afrique — Construisons ensemble",
-    description: "Coopération, investissement et innovation : le GIE Opportunité d’Afrique rassemble les ambitions pour un développement économique durable et inclusif.",
+    metadataBase: new URL(SITE_URL),
+    title: {
+        default: "GIE Opportunité d’Afrique — Construisons ensemble",
+        template: "%s — GIE Opportunité d’Afrique"
+    },
+    description: "Coopération, investissement et innovation : le GIE Opportunité d’Afrique rassemble les ambitions pour un développement économique durable et inclusif en Afrique.",
+    keywords: [
+        "GIE Opportunité d’Afrique",
+        "Afrique",
+        "développement économique",
+        "coopération",
+        "investissement",
+        "innovation",
+        "agriculture",
+        "maritime",
+        "technologies",
+        "commerce"
+    ],
+    authors: [
+        {
+            name: "GIE Opportunité d’Afrique",
+            url: SITE_URL
+        }
+    ],
+    creator: "GIE Opportunité d’Afrique",
+    publisher: "GIE Opportunité d’Afrique",
+    category: "Économie",
+    alternates: {
+        canonical: "/"
+    },
     openGraph: {
         title: "GIE Opportunité d’Afrique",
-        description: "L’Afrique des opportunités se construit ensemble.",
+        description: "L’Afrique des opportunités se construit ensemble. Coopération, investissement et innovation au service d’un développement durable et inclusif.",
+        url: SITE_URL,
+        siteName: "GIE Opportunité d’Afrique",
         locale: "fr_FR",
         type: "website",
+        images: [
+            {
+                url: "/images/hero-poster.webp",
+                width: 1200,
+                height: 630,
+                alt: "GIE Opportunité d’Afrique"
+            }
+        ]
+    },
+    twitter: {
+        card: "summary_large_image",
+        title: "GIE Opportunité d’Afrique",
+        description: "L’Afrique des opportunités se construit ensemble. Coopération, investissement et innovation.",
         images: [
             "/images/hero-poster.webp"
         ]
@@ -30,8 +73,21 @@ const metadata = {
         follow: true
     },
     icons: {
-        icon: "/images/logo.png"
+        icon: "/images/logo.png",
+        apple: "/images/logo.png"
     }
+};
+const organizationJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    name: "GIE Opportunité d’Afrique",
+    url: SITE_URL,
+    logo: `${SITE_URL}/images/logo.png`,
+    email: "gie.oasn@gmail.com",
+    description: "Groupement d’intérêt économique qui favorise la coopération, stimule les investissements et encourage l’innovation pour le développement économique et durable de l’Afrique.",
+    sameAs: [
+        "https://www.instagram.com/gie.oasn"
+    ]
 };
 function RootLayout({ children }) {
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("html", {
@@ -40,31 +96,43 @@ function RootLayout({ children }) {
         suppressHydrationWarning: true,
         children: [
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("head", {
-                children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("script", {
-                    dangerouslySetInnerHTML: {
-                        __html: `try{document.documentElement.dataset.theme=localStorage.getItem('gie-theme')==='light'?'light':'dark'}catch{}`
-                    }
-                }, void 0, false, {
-                    fileName: "[project]/app/layout.tsx",
-                    lineNumber: 27,
-                    columnNumber: 9
-                }, this)
-            }, void 0, false, {
+                children: [
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("script", {
+                        dangerouslySetInnerHTML: {
+                            __html: `try{document.documentElement.dataset.theme=localStorage.getItem('gie-theme')==='light'?'light':'dark'}catch{}`
+                        }
+                    }, void 0, false, {
+                        fileName: "[project]/app/layout.tsx",
+                        lineNumber: 71,
+                        columnNumber: 9
+                    }, this),
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("script", {
+                        type: "application/ld+json",
+                        dangerouslySetInnerHTML: {
+                            __html: JSON.stringify(organizationJsonLd)
+                        }
+                    }, void 0, false, {
+                        fileName: "[project]/app/layout.tsx",
+                        lineNumber: 76,
+                        columnNumber: 9
+                    }, this)
+                ]
+            }, void 0, true, {
                 fileName: "[project]/app/layout.tsx",
-                lineNumber: 26,
+                lineNumber: 70,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("body", {
                 children: children
             }, void 0, false, {
                 fileName: "[project]/app/layout.tsx",
-                lineNumber: 33,
+                lineNumber: 81,
                 columnNumber: 7
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/app/layout.tsx",
-        lineNumber: 25,
+        lineNumber: 69,
         columnNumber: 5
     }, this);
 }
